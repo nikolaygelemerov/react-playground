@@ -1,0 +1,21 @@
+{
+  "extends": "react-app",
+  "plugins": ["react-hooks"],
+  "rules": {
+    "quotes": ["error", "single"],
+    "react/jsx-pascal-case": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-restricted-globals": "warn",
+    "no-undef": "error",
+    "no-unused-vars": "warn"
+  },
+  "overrides": [
+    {
+      "files": "[*.scss, *.css]",
+      "rules": {
+        "quotes": ["error", "single"]
+      }
+    }
+  ]
+}

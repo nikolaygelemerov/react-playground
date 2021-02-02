@@ -1,0 +1,7 @@
+.ListState {
+  background-color: lightblue; }
+
+.ListState,
+.ListReducer {
+  display: inline-block;
+  width: 50%; }

@@ -1,0 +1,13 @@
+//@import url(../../styles/_variables/colors.scss);
+
+$lightBlue: lightblue;
+
+.ListState {
+  background-color: $lightBlue;
+}
+
+.ListState,
+.ListReducer {
+  display: inline-block;
+  width: 50%;
+}
