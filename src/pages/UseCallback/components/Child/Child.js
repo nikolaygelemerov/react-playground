@@ -20,7 +20,18 @@ const Child = ({ counter, data }) => {
           }));
         }}
       >
-        Update Local Data Vendor
+        Update New Object Local Data Vendor
+      </button>
+      <button
+        onClick={() => {
+          setLocalData(prevLocalData => {
+            prevLocalData.localVendor += 1;
+
+            return prevLocalData;
+          });
+        }}
+      >
+        Update Mutate Object Local Data Vendor
       </button>
     </>
   );
