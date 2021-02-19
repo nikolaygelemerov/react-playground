@@ -14,6 +14,7 @@ export { default as ThisInClassCmp } from './ThisInClassCmp/ThisInClassCmp';
 export { default as Todo } from './Todo/Todo';
 export { default as Unmount } from './Unmount/Unmount';
 export { default as UseAsyncState } from './UseAsyncState/UseAsyncState';
+export { default as UseCallback } from './UseCallback/UseCallback';
 export { default as UseEffectVsUseLayoutEffect } from './UseEffectVsUseLayoutEffect/UseEffectVsUseLayoutEffect';
 export { default as UsePrevious } from './UsePrevious/UsePrevious';
 export { default as UseEffectDependency } from './UseEffectDependency/UseEffectDependency';

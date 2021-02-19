@@ -26,6 +26,7 @@ import {
   Todo,
   Unmount,
   UseAsyncState,
+  UseCallback,
   UseEffectVsUseLayoutEffect,
   UsePrevious,
   UseEffectDependency
@@ -167,6 +168,14 @@ const Router = () => {
           className="NavLink"
           activeClassName="NavLinkActive"
           exact
+          to="/UseCallback"
+        >
+          UseCallback
+        </NavLink>
+        <NavLink
+          className="NavLink"
+          activeClassName="NavLinkActive"
+          exact
           to="/UseEffectVsUseLayoutEffect"
         >
           UseEffectVsUseLayoutEffect
@@ -226,6 +235,7 @@ const Router = () => {
           <Route path="/Todo" exact component={Todo} />
           <Route path="/Unmount" exact component={Unmount} />
           <Route path="/UseAsyncState" exact component={UseAsyncState} />
+          <Route path="/UseCallback" exact component={UseCallback} />
           <Route
             path="/UseEffectVsUseLayoutEffect"
             exact
