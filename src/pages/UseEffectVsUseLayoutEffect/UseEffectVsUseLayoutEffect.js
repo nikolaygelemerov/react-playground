@@ -6,24 +6,53 @@ import React, {
   useRef
 } from 'react';
 
+import { console } from '../../services';
+
+import { Child_1, Child_2_ClassCmp } from './components';
+
 const UseEffectVsUseLayoutEffect = props => {
   const [displaytest, setDisplayTest] = useState(false);
+  const [counter, setCounter] = useState(0);
 
   const el = useRef(null);
 
-  useEffect(() => {
-    console.log('useEffect 1: ', displaytest);
+  // useLayoutEffect(() => {
+  //   console({
+  //     value: `useLayoutEffect 1: ${displaytest} ${counter}`,
+  //     color: 'black',
+  //     bgColor: 'lightBlue'
+  //   });
 
-    return () => console.log('return useEffect 1: ', displaytest);
-  });
+  //   return () =>
+  //     console({
+  //       value: `return useLayoutEffect 1: ${displaytest} ${counter}`,
+  //       color: 'white',
+  //       bgColor: 'blue'
+  //     });
+  // }, [displaytest, counter]);
 
-  useEffect(() => {
-    console.log('useEffect 2: ', displaytest);
+  // useEffect(() => {
+  //   console({
+  //     value: `useEffect 2: ${displaytest} ${counter}`,
+  //     color: 'white',
+  //     bgColor: 'green'
+  //   });
 
-    return () => console.log('return useEffect 2: ', displaytest);
-  }, [displaytest]);
+  //   setCounter(prevCounter => prevCounter + 1);
 
-  console.log('render: ', displaytest);
+  //   return () =>
+  //     console({
+  //       value: `return useEffect 2: ${displaytest} ${counter}`,
+  //       color: 'black',
+  //       bgColor: 'lightGreen'
+  //     });
+  // }, [displaytest]);
+
+  // console({
+  //   value: `render: ${displaytest} ${counter}`,
+  //   color: 'black',
+  //   bgColor: 'pink'
+  // });
 
   return (
     <div ref={el}>
@@ -35,6 +64,13 @@ const UseEffectVsUseLayoutEffect = props => {
         Toggle Display Test
       </button>
       {displaytest ? <div>Test</div> : null}
+      <div>{counter}</div>
+      {displaytest ? (
+        <>
+          {/* <Child_1 /> */}
+          <Child_2_ClassCmp />
+        </>
+      ) : null}
     </div>
   );
 };
