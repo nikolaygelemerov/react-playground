@@ -12,6 +12,7 @@ import App from '../App/App';
 import {
   AsyncSetStateClassCmp,
   AwaitSetStateFuncCmp,
+  ContextApi,
   DefaultObjectProps,
   DepArray,
   EffectsUpdateFlow,
@@ -51,6 +52,14 @@ const Router = () => {
           to="/AwaitSetStateFuncCmp"
         >
           AwaitSetStateFuncCmp
+        </NavLink>
+        <NavLink
+          className="NavLink"
+          activeClassName="NavLinkActive"
+          exact
+          to="/ContextApi"
+        >
+          ContextApi
         </NavLink>
         <NavLink
           className="NavLink"
@@ -209,6 +218,7 @@ const Router = () => {
             exact
             component={AwaitSetStateFuncCmp}
           />
+          <Route path="/ContextApi" exact component={ContextApi} />
           <Route
             path="/DefaultObjectProps"
             exact

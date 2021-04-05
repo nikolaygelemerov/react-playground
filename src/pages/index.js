@@ -1,5 +1,6 @@
 export { default as AsyncSetStateClassCmp } from './AsyncSetStateClassCmp/AsyncSetState';
 export { default as AwaitSetStateFuncCmp } from './AwaitSetStateFuncCmp/AwaitSetState';
+export { default as ContextApi } from './ContextApi/ContextApi';
 export { default as DefaultObjectProps } from './DefaultObjectProps/DefaultObjectProps';
 export { default as DepArray } from './DepArray/DepArray';
 export { default as EffectsUpdateFlow } from './EffectsUpdateFlow/EffectsUpdateFlow';

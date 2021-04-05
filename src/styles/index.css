@@ -29,7 +29,8 @@ button {
   text-align: center;
   background-color: black;
   border: none;
-  outline: none; }
+  outline: none;
+  cursor: pointer; }
 
 button:active {
   color: lightgreen;

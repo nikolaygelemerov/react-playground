@@ -67,8 +67,8 @@ const UseEffectVsUseLayoutEffect = props => {
       <div>{counter}</div>
       {displaytest ? (
         <>
-          {/* <Child_1 /> */}
-          <Child_2_ClassCmp />
+          <Child_1 />
+          {/* <Child_2_ClassCmp /> */}
         </>
       ) : null}
     </div>

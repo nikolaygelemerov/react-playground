@@ -5,7 +5,7 @@ const Child_1 = () => {
   const [color, setColor] = useState('red');
   const [marginTop, setMarginTop] = useState(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let x = 0;
 
     while (x < 999999999) {
