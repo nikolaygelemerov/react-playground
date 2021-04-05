@@ -1,2 +1,2 @@
-export { default as MakeQuery } from './MakeQuery/MakeQuery';
-export { default as SetFilter } from './SetFilter/SetFilter';
+export { default as FilterQuery } from './FilterQuery/FilterQuery';
+export { default as SortQuery } from './SortQuery/SortQuery';

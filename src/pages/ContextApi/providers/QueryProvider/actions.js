@@ -9,9 +9,9 @@ export const setQuery = ({ queryBy, filters }, setState) => {
       error: false,
       loading: false,
       success: false,
-      filters,
       queryBy,
-      queryId
+      queryId,
+      ...(filters ? { filters } : {})
     });
 
     return { ...prevState, requestQuery: {}, queries };

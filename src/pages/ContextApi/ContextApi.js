@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 import { FiltersProvider, QueryProvider } from './providers';
-import { MakeQuery, SetFilter } from './components';
+import { FilterQuery, SortQuery } from './components';
 import { QueryManager } from './renderless';
 
 const ContextApi = () => {
@@ -9,8 +9,8 @@ const ContextApi = () => {
     <QueryProvider>
       <QueryManager />
       <FiltersProvider>
-        <MakeQuery />
-        <SetFilter />
+        <FilterQuery />
+        <SortQuery />
       </FiltersProvider>
     </QueryProvider>
   );

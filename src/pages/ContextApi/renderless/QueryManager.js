@@ -1,7 +1,7 @@
-import { memo, useContext } from 'react';
+import { memo, useCallback, useContext } from 'react';
 import axios from 'axios';
 
-import { useUpdate } from '../../../services';
+import { useUpdate, useUpdateOnly } from '../../../services';
 import { QueryContext } from '../providers';
 
 const UrlManager = () => {
@@ -11,7 +11,7 @@ const UrlManager = () => {
     queries
   } = useContext(QueryContext);
 
-  useUpdate(async () => {
+  const makeQuery = useCallback(async () => {
     const lastRequest = queries[queries.length - 1];
 
     if (requestQuery && lastRequest) {
@@ -22,10 +22,20 @@ const UrlManager = () => {
           'https://jsonplaceholder.typicode.com/posts'
         );
 
-        updateQuery({
-          queryId: lastRequest.queryId,
-          data: { loading: false, success: true }
-        });
+        if (lastRequest.queryBy === 'sort') {
+          console.log('POR lastRequest.queryId: ', lastRequest.queryId);
+          setTimeout(() => {
+            updateQuery({
+              queryId: lastRequest.queryId,
+              data: { loading: false, success: true }
+            });
+          }, 3000);
+        } else {
+          updateQuery({
+            queryId: lastRequest.queryId,
+            data: { loading: false, success: true }
+          });
+        }
       } catch (error) {
         updateQuery({
           queryId: lastRequest.queryId,
@@ -33,9 +43,15 @@ const UrlManager = () => {
         });
       }
     }
+  }, [queries, requestQuery, updateQuery]);
+
+  useUpdate(async () => {
+    await makeQuery();
   }, [requestQuery]);
 
-  console.log('queries: ', queries);
+  useUpdateOnly(() => {
+    console.log('POR queries: ', queries);
+  }, [queries]);
 
   return null;
 };
