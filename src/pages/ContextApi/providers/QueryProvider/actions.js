@@ -1,4 +1,4 @@
-import { idGenerator } from '../../../services';
+import { idGenerator } from '../../../../services';
 
 export const setQuery = ({ queryBy, filters }, setState) => {
   setState(prevState => {

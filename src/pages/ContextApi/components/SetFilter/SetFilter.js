@@ -1,6 +1,6 @@
 import { memo, useContext } from 'react';
 
-import { FiltersContext } from '../../FiltersProvider/FiltersProvider';
+import { FiltersContext } from '../../providers';
 
 const SetFilter = () => {
   const {

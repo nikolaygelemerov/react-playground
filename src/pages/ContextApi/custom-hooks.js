@@ -1,7 +1,6 @@
 import { useCallback, useContext } from 'react';
 
-import { QueryContext } from './QueryProvider/QueryProvider';
-import { FiltersContext } from './FiltersProvider/FiltersProvider';
+import { FiltersContext, QueryContext } from './providers';
 
 export const useQueryFilters = () => {
   const { filters } = useContext(FiltersContext);

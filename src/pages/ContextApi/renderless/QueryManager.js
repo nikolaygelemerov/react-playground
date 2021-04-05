@@ -2,7 +2,7 @@ import { memo, useContext } from 'react';
 import axios from 'axios';
 
 import { useUpdate } from '../../../services';
-import { QueryContext } from '../QueryProvider/QueryProvider';
+import { QueryContext } from '../providers';
 
 const UrlManager = () => {
   const {

@@ -1,7 +1,6 @@
 import { memo } from 'react';
 
-import { QueryProvider } from './QueryProvider/QueryProvider';
-import { FiltersProvider } from './FiltersProvider/FiltersProvider';
+import { FiltersProvider, QueryProvider } from './providers';
 import { MakeQuery, SetFilter } from './components';
 import { QueryManager } from './renderless';
 
