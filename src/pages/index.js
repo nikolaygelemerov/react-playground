@@ -11,6 +11,7 @@ export { default as Parent } from './Parent/Parent';
 export { default as Refs } from './Refs/Refs';
 export { default as RenderChildFromConstant } from './RenderChildFromConstant/RenderChildFromConstant';
 export { default as RenderChildren } from './RenderChildren/RenderChildren';
+export { default as ScrollComponent } from './ScrollComponent/ScrollComponent';
 export { default as ThisInClassCmp } from './ThisInClassCmp/ThisInClassCmp';
 export { default as Todo } from './Todo/Todo';
 export { default as Unmount } from './Unmount/Unmount';

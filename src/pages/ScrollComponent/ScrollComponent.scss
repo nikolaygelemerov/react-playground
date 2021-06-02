@@ -1,0 +1,19 @@
+.Content {
+  width: 800px;
+  height: 800px;
+  background-color: yellow;
+}
+
+.Scroller {
+  right: 3px;
+  width: 8px;
+  background-color: lightblue;
+  border-radius: 3px;
+}
+
+.Track {
+  right: 0;
+  width: 14px;
+  background-color: grey;
+  cursor: pointer;
+}

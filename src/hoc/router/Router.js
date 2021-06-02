@@ -23,6 +23,7 @@ import {
   Refs,
   RenderChildFromConstant,
   RenderChildren,
+  ScrollComponent,
   ThisInClassCmp,
   Todo,
   Unmount,
@@ -145,6 +146,14 @@ const Router = () => {
           className="NavLink"
           activeClassName="NavLinkActive"
           exact
+          to="/ScrollComponent"
+        >
+          ScrollComponent
+        </NavLink>
+        <NavLink
+          className="NavLink"
+          activeClassName="NavLinkActive"
+          exact
           to="/ThisInClassCmp"
         >
           ThisInClassCmp
@@ -241,6 +250,7 @@ const Router = () => {
             component={RenderChildFromConstant}
           />
           <Route path="/RenderChildren" exact component={RenderChildren} />
+          <Route path="/ScrollComponent" exact component={ScrollComponent} />
           <Route path="/ThisInClassCmp" exact component={ThisInClassCmp} />
           <Route path="/Todo" exact component={Todo} />
           <Route path="/Unmount" exact component={Unmount} />
