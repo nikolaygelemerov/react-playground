@@ -23,6 +23,7 @@ const UsePrevious = () => {
   useEffect(() => {
     console.log('prevCount: ', prevCount);
     console.log('count: ', count);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count]);
 
   return (

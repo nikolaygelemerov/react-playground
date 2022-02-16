@@ -1,5 +1,5 @@
 import { memo, useCallback, useContext } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 import { useUpdate, useUpdateOnly } from '../../../services';
 import { QueryContext } from '../providers';
@@ -18,9 +18,9 @@ const UrlManager = () => {
       try {
         updateQuery({ queryId: lastRequest.queryId, data: { loading: true } });
 
-        const result = await axios.get(
-          'https://jsonplaceholder.typicode.com/posts'
-        );
+        // const result = await axios.get(
+        //   'https://jsonplaceholder.typicode.com/posts'
+        // );
 
         if (lastRequest.queryBy === 'sort') {
           console.log('POR lastRequest.queryId: ', lastRequest.queryId);

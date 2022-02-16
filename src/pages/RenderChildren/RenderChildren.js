@@ -5,7 +5,7 @@ import { Child_1, GrandChild_1 } from './components';
 import { RandomContextProvider } from './context';
 
 const RenderChildren = () => {
-  const [update, setUpdate] = useState({});
+  const [, setUpdate] = useState({});
 
   return (
     <div>

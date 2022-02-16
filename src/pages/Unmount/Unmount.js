@@ -1,11 +1,11 @@
 import React, { memo, useCallback, useState } from 'react';
 
-import { ChildOne, ChildTwo } from './components';
+import { ChildTwo } from './components';
 
 const Unmount = () => {
   const [showChildOne, setShowChildOne] = useState(true);
 
-  const onChildOneUnmount = useCallback((data) => {
+  const onChildOneUnmount = useCallback(data => {
     console.log('data: ', data);
   }, []);
 
@@ -13,7 +13,7 @@ const Unmount = () => {
     <>
       <button
         onClick={() => {
-          setShowChildOne((prevShowChildOne) => !prevShowChildOne);
+          setShowChildOne(prevShowChildOne => !prevShowChildOne);
         }}
       >
         Toggle Child One

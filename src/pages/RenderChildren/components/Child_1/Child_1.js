@@ -9,7 +9,7 @@ const Child_1 = ({ children }) => {
     console.log('Mount Child_1');
   });
 
-  const { randomState, randomValueSetter } = useContext(RandomContext);
+  const { randomValueSetter } = useContext(RandomContext);
 
   console.log('Render Child_1');
 

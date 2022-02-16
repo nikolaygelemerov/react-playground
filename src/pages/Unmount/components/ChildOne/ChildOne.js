@@ -4,7 +4,7 @@ import { useUnmount } from '../../../../services';
 
 const ChildOne = ({ children, onChildOneUnmount }) => {
   const [count, setCounter] = useState(0);
-  const [count1, setCounter1] = useState(0);
+  const [, setCounter1] = useState(0);
   console.log('children: ', children);
   useUnmount(onChildOneUnmount, { count });
 
@@ -12,7 +12,7 @@ const ChildOne = ({ children, onChildOneUnmount }) => {
     <>
       <button
         onClick={() => {
-          setCounter((prevCount) => prevCount + 1);
+          setCounter(prevCount => prevCount + 1);
         }}
         type="button"
       >
@@ -20,7 +20,7 @@ const ChildOne = ({ children, onChildOneUnmount }) => {
       </button>
       <button
         onClick={() => {
-          setCounter1((prevCount) => prevCount + 1);
+          setCounter1(prevCount => prevCount + 1);
         }}
         type="button"
       >

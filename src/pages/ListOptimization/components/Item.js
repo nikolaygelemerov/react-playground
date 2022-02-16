@@ -1,9 +1,9 @@
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 
-const CARS_OBJ = {
-  audi: 'audi',
-  bmw: 'bmw'
-};
+// const CARS_OBJ = {
+//   audi: 'audi',
+//   bmw: 'bmw'
+// };
 
 const car = '';
 
@@ -21,32 +21,32 @@ const Item = ({ index, type, updateYear }) => {
   // const car = CARS_OBJ[type];
 
   console.time('noMemo');
-  const carObj = {
-    number: 23,
-    type,
-    description: {
-      city: 'Varna',
-      region: 'Varna',
-      municipalities: ['Varna', 'Bourgas', 'Sofia']
-    }
-  };
+  // const carObj = {
+  //   number: 23,
+  //   type,
+  //   description: {
+  //     city: 'Varna',
+  //     region: 'Varna',
+  //     municipalities: ['Varna', 'Bourgas', 'Sofia']
+  //   }
+  // };
   //const car2 = CARS_ARR.find(car => car[type] === type)?.[type];
   console.timeEnd('noMemo');
 
   // find car in Array
   console.time('memo');
-  const carObjMemo = useMemo(
-    () => ({
-      number: 23,
-      type,
-      description: {
-        city: 'Varna',
-        region: 'Varna',
-        municipalities: ['Varna', 'Bourgas', 'Sofia']
-      }
-    }),
-    [type]
-  );
+  // const carObjMemo = useMemo(
+  //   () => ({
+  //     number: 23,
+  //     type,
+  //     description: {
+  //       city: 'Varna',
+  //       region: 'Varna',
+  //       municipalities: ['Varna', 'Bourgas', 'Sofia']
+  //     }
+  //   }),
+  //   [type]
+  // );
   // const car = useMemo(() => CARS_ARR.find(car => car[type] === type)?.[type], [
   //   type
   // ]);

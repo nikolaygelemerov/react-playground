@@ -14,14 +14,15 @@ const Parent = props => {
 
   //usually useMemo is used for memoizing function output
   //and useCallback is used for memoizing functions
-  const memoCallback = useMemo(() => () => {}, []); // same as useCallback but returns a function
-  const callback = useCallback(() => {
-    console.log(match);
-  }, [match]);
+  // const memoCallback = useMemo(() => () => {}, []); // same as useCallback but returns a function
+  // const callback = useCallback(() => {
+  //   console.log(match);
+  // }, [match]);
 
   const updateCount = useCallback(() => {
     console.log('count: ', count);
     setCount(prevCount => ({ count: { count: prevCount.count.count + 1 } }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [match]);
 
   const computed = useMemo(() => {

@@ -3,11 +3,9 @@ import { createRef, PureComponent } from 'react';
 import { console as consoleSrv } from '../../../../services';
 
 const blocker = () => {
-  let x = 0;
+  const now = Date.now();
 
-  while (x < 1999999999) {
-    x++;
-  }
+  while (Date.now() < now + 2000) {}
 };
 
 // The async function returns a promise
@@ -15,23 +13,23 @@ const blocker = () => {
 // Inserts in the end of the current callstack
 // Blocks rendering
 // Rendering cannot process untill the callstack is not empty
-const microtaskFn = async () => {
-  blocker();
+// const microtaskFn = async () => {
+//   blocker();
 
-  return 'Resolve microtaskFn';
-};
+//   return 'Resolve microtaskFn';
+// };
 
 // Returns a promise that resolves in a timeout
 // The timeout creates a macrotask
 // Even though the promise creates a microtask, in the body of Promise callback the timeout creates a macrotask
 // The mactrotask is not blocking the rendering, as it's execution starts only when the callstack is empty
-const macrotaskFn = () => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve('Resolve macrotaskFn');
-    }, 3000);
-  });
-};
+// const macrotaskFn = () => {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve('Resolve macrotaskFn');
+//     }, 3000);
+//   });
+// };
 
 class Child_2_ClassCmp extends PureComponent {
   // Persist color state
@@ -41,13 +39,18 @@ class Child_2_ClassCmp extends PureComponent {
   ref = createRef();
 
   logger({ entry, color, bgColor }) {
+    const bgValueComputed = getComputedStyle(
+      this.ref?.current
+    )?.getPropertyValue('background-color');
+
+    const bgValueStyle =
+      document.querySelector('#wrapper')?.style?.backgroundColor;
+
     consoleSrv({
-      value: `${entry} styles this.ref?.current, document.querySelector: ${getComputedStyle(
-        this.ref?.current
-      )?.getPropertyValue('background-color')} ${
-        document.querySelector('#wrapper')?.style?.backgroundColor
-      }`,
-      bgColor,
+      value: `${entry} styles 
+      this.ref?.current: ${bgValueComputed}
+      document.querySelector: ${bgValueStyle}`,
+      bgColor: bgValueComputed,
       color
     });
   }
@@ -78,7 +81,7 @@ class Child_2_ClassCmp extends PureComponent {
     new Promise(resolve => {
       blocker();
 
-      resolve('Block');
+      resolve('Promise Block');
     }).then(result => {
       consoleSrv({ value: result });
     });
@@ -90,6 +93,7 @@ class Child_2_ClassCmp extends PureComponent {
     });
 
     this.setState({ color: 'green' });
+    requestAnimationFrame(() => {});
   }
 
   // Runs syncronously after render

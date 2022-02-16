@@ -1,7 +1,7 @@
-import { memo, useEffect, useLayoutEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 const Child_1 = () => {
-  const [arr, setArr] = useState([]);
+  //  const [arr, setArr] = useState([]);
   const [color, setColor] = useState('red');
   const [marginTop, setMarginTop] = useState(0);
 

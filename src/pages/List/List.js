@@ -21,20 +21,20 @@ const List = props => {
   // the timeout callback makes a closure to listState
   // setListItemState is called with listState and by the time
   // the timeout callback is executed its the same value of listState each time
-  const setListItemState = useCallback(async () => {
-    try {
-      const result = await axios.get(
-        'https://jsonplaceholder.typicode.com/todos/1'
-      );
+  // const setListItemState = useCallback(async () => {
+  //   try {
+  //     const result = await axios.get(
+  //       'https://jsonplaceholder.typicode.com/todos/1'
+  //     );
 
-      setTimeout(() => {
-        console.log('listState.length: ', listState.length);
-        updateList([...listState, result.data]);
-      }, 3000);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [listState]);
+  //     setTimeout(() => {
+  //       console.log('listState.length: ', listState.length);
+  //       updateList([...listState, result.data]);
+  //     }, 3000);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }, [listState]);
 
   // Using prevState works as useReducer, always passes actual state
   const setListItemStateUsePrev = useCallback(async () => {

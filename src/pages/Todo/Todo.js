@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 const fetchTodos = async () => {
   try {
-    const result = await axios.get(
-      'https://jsonplaceholder.typicode.com/todos/1'
-    );
+    // const result = await axios.get(
+    //   'https://jsonplaceholder.typicode.com/todos/1'
+    // );
   } catch (error) {
     console.error(error);
   }

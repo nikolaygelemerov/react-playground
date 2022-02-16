@@ -1,6 +1,6 @@
-import React, { memo, useCallback, useLayoutEffect, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 
-import { console, useUpdate, useUpdateOnly } from '../../services';
+import { console, useUpdate } from '../../services';
 
 let a = 20;
 
@@ -25,6 +25,7 @@ const AwaitSetState = ({ prop }) => {
     });
 
     // setCountTwo(prevCount => prevCount + 1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [countOne]);
 
   const updateCountTwo = useCallback(async () => {

@@ -4,24 +4,21 @@ import { Child1 } from './components';
 
 const DefaultObjectProps = () => {
   const [counter, setCounter] = useState(0);
-  const [list, setList] = useState([]);
+  const [, setList] = useState([]);
 
   return (
     <div>
       <Child1 counter={counter} />
       <button
         onClick={() => {
-          setCounter((prevState) => prevState + 1);
+          setCounter(prevState => prevState + 1);
         }}
       >
         Update counter
       </button>
       <button
         onClick={() => {
-          setList((prevState) => [
-            ...prevState,
-            Math.floor(Math.random() * 100),
-          ]);
+          setList(prevState => [...prevState, Math.floor(Math.random() * 100)]);
         }}
       >
         Update list

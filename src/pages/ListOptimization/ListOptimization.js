@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 import List from './components/List';
-import ListWithMemo from './components/ListWithMemo';
+// import ListWithMemo from './components/ListWithMemo';
 
 const ListOptimization = () => {
-  const [update, setUpdate] = useState({});
+  const [, setUpdate] = useState({});
   const [updateType, setUpdateType] = useState('audi');
   const [updateYear, setUpdateYear] = useState(39);
 

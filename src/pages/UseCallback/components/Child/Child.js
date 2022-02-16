@@ -7,6 +7,7 @@ const Child = ({ counter, data }) => {
     console.log('TEST counter: ', counter);
     console.log('TEST data: ', data);
     console.log('TEST localData: ', localData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [counter]);
 
   return (

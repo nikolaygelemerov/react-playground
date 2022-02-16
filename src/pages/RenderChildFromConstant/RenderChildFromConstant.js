@@ -3,7 +3,7 @@ import React, { memo, useState } from 'react';
 import { Child_1, Child_2 } from './components';
 
 const RenderChildFromConstant = () => {
-  const [update, setUpdate] = useState({});
+  const [, setUpdate] = useState({});
 
   const child1 = () => {
     return <Child_1 />;
