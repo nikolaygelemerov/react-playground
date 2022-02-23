@@ -18,6 +18,7 @@ import {
   EffectsUpdateFlow,
   List,
   ListOptimization,
+  MemoizationPerformance,
   Mount,
   Parent,
   Refs,
@@ -101,6 +102,14 @@ const Router = () => {
           to="/ListOptimization"
         >
           ListOptimization
+        </NavLink>
+        <NavLink
+          className="NavLink"
+          activeClassName="NavLinkActive"
+          exact
+          to="/MemoizationPerformance"
+        >
+          MemoizationPerformance
         </NavLink>
         <NavLink
           className="NavLink"
@@ -241,6 +250,11 @@ const Router = () => {
           />
           <Route path="/List" exact component={List} />
           <Route path="/ListOptimization" exact component={ListOptimization} />
+          <Route
+            path="/MemoizationPerformance"
+            exact
+            component={MemoizationPerformance}
+          />
           <Route path="/Mount" exact component={Mount} />
           <Route path="/Parent" exact component={Parent} />
           <Route path="/Refs" exact component={Refs} />

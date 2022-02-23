@@ -6,6 +6,7 @@ export { default as DepArray } from './DepArray/DepArray';
 export { default as EffectsUpdateFlow } from './EffectsUpdateFlow/EffectsUpdateFlow';
 export { default as List } from './List/List';
 export { default as ListOptimization } from './ListOptimization/ListOptimization';
+export { default as MemoizationPerformance } from './MemoizationPerformance/MemoizationPerformance';
 export { default as Mount } from './Mount/Mount';
 export { default as Parent } from './Parent/Parent';
 export { default as Refs } from './Refs/Refs';

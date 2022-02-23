@@ -18,15 +18,25 @@ import React, { memo, useCallback, useState } from 'react';
 
 const UseAsyncState = props => {
   const [count, setCount] = useState(0);
+  const [count_1, setCount_1] = useState(0);
 
   const onClickHandler = useCallback(async () => {
-    console.log(setCount(prevState => prevState + 1) instanceof Promise);
-    await setCount(prevState => prevState + 1);
+    setCount(prevState => prevState + 1);
+    setCount_1(prevState => prevState + 1);
+  }, []);
 
-    console.log('count: ', count);
-  }, [count, setCount]);
+  // const updateCb = useCallback(async () => {
+  //   console.log('UPDATE before count_1: ', count_1);
 
-  console.log('render count: ', count);
+  //   await setCount_1(prevState => prevState + 1);
+
+  //   console.log('UPDATE after count_1: ', count_1);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [count]);
+
+  // useEffect(updateCb, [updateCb]);
+
+  console.log('render count, count_1: ', count, count_1);
 
   return (
     <div>
