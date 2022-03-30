@@ -21,8 +21,12 @@ const UseAsyncState = props => {
   const [count_1, setCount_1] = useState(0);
 
   const onClickHandler = useCallback(async () => {
-    setCount(prevState => prevState + 1);
-    setCount_1(prevState => prevState + 1);
+    new Promise(resolve => {
+      setTimeout(() => {
+        setCount(prevState => prevState + 1);
+        setCount_1(prevState => prevState + 1);
+      }, 1000);
+    });
   }, []);
 
   // const updateCb = useCallback(async () => {
