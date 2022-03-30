@@ -79,23 +79,33 @@ class Child_2_ClassCmp extends PureComponent {
     // Executes after current stack is done
     // Logs after componentDidUpdate
 
+    /*
     fetch('https://jsonplaceholder.typicode.com/todos/1')
       .then(response => response.json())
       .then(data => consoleSrv({ value: JSON.stringify(data) }));
-
-    /*  
-      const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-      const data = await response.json();
-      consoleSrv({ value: JSON.stringify(data) });
-  
-      new Promise(resolve => {
-        blocker();
-  
-        resolve('PROMISE BLOCK');
-      }).then(result => {
-        consoleSrv({ value: result });
-      });
       */
+
+    // Test with slow 3g
+    consoleSrv({ value: 'BEFORE AWAIT' });
+
+    await Promise.resolve('SUCCESS').then(value => consoleSrv({ value }));
+
+    /*
+    const response = await fetch(
+      'https://jsonplaceholder.typicode.com/todos/1'
+    );
+
+    const data = await response.json();
+    consoleSrv({ value: JSON.stringify(data) });
+    */
+
+    new Promise(resolve => {
+      blocker();
+
+      resolve('PROMISE BLOCK');
+    }).then(result => {
+      consoleSrv({ value: result });
+    });
 
     new Promise(resolve => {
       blocker();
@@ -150,6 +160,8 @@ class Child_2_ClassCmp extends PureComponent {
   }
 
   render() {
+    console.log('RENDER');
+
     return (
       <div
         id="wrapper"
