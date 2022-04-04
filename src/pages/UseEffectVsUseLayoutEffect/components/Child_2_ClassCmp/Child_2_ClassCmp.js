@@ -130,11 +130,11 @@ class Child_2_ClassCmp extends PureComponent {
   // Runs syncronously after render
   // Preserverse old DOM state (before reflow and repaint)
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    // this.logger({
-    //   entry: 'getSnapshotBeforeUpdate',
-    //   color: 'black',
-    //   bgColor: 'lightblue'
-    // });
+    this.logger({
+      entry: 'getSnapshotBeforeUpdate',
+      color: 'black',
+      bgColor: 'lightblue'
+    });
 
     return {
       prevColor: prevState.color,
