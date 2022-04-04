@@ -1,4 +1,10 @@
-import { memo, useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
+
+const blocker = () => {
+  const now = Date.now();
+
+  while (Date.now() < now + 2000) {}
+};
 
 const Child_1 = () => {
   //  const [arr, setArr] = useState([]);
@@ -6,11 +12,8 @@ const Child_1 = () => {
   const [marginTop, setMarginTop] = useState(0);
 
   useEffect(() => {
-    let x = 0;
+    blocker();
 
-    while (x < 999999999) {
-      x++;
-    }
     setColor('orange');
     setMarginTop(50);
   }, []);
