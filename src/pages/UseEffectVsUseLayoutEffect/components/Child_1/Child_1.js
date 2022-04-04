@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from 'react';
+import { memo, useEffect, useLayoutEffect, useState } from 'react';
 
 const blocker = () => {
   const now = Date.now();
@@ -12,10 +12,20 @@ const Child_1 = () => {
   const [marginTop, setMarginTop] = useState(0);
 
   useEffect(() => {
+    console.log('useEffect: ', color);
+
+    return () => console.log('useEffect return: ', color);
+  }, [color]);
+
+  useLayoutEffect(() => {
+    console.log('useLayoutEffect');
+
     blocker();
 
     setColor('orange');
     setMarginTop(50);
+
+    return () => console.log('useLayoutEffect return');
   }, []);
 
   return (
