@@ -1,4 +1,5 @@
 import React, { memo, useCallback, useState } from 'react';
+import { KeyboardEventType } from '@rounik/react-custom-hooks';
 
 // This is a workaround of useEffect(() => {}, [count])
 // const useAsyncState = initialValue => {
