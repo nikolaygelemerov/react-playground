@@ -1471,6 +1471,21 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
+"@rounik/react-custom-hooks@0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@rounik/react-custom-hooks/-/react-custom-hooks-0.1.8.tgz#699fc4c2d9131f70bc4e7218100e7fc5c06a8ff9"
+  integrity sha512-MrVTzFsg2zC0XftE0aB7Q3+249KnbuKQ8cFJIJ+pQHJAe5AycbRWO9af62+q8h1wSvFGjW8RKVSf7MXWDsvY/A==
+  dependencies:
+    react "17.0.2"
+
+"@rounik/react-form-builder@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@rounik/react-form-builder/-/react-form-builder-0.0.14.tgz#45065f4a89b722c03fda2471a35029a9dc9f38f7"
+  integrity sha512-4iiWyCtpJ/Qd4MQy3h39HEbLsxVeRmmySu08Iexaiv61xA3sfRyByRMyCnyUUNM9nwZOHnr3d5Zdqk/kwupgjA==
+  dependencies:
+    "@rounik/react-custom-hooks" "0.1.8"
+    react-scroll-component "0.6.7"
+
 "@sinonjs/commons@^1.7.0":
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.1.tgz#e7df00f98a203324f6dc7cc606cad9d4a8ab2217"
@@ -9587,6 +9602,19 @@ react-scripts@4.0.1:
     workbox-webpack-plugin "5.1.4"
   optionalDependencies:
     fsevents "^2.1.3"
+
+react-scroll-component@0.6.7:
+  version "0.6.7"
+  resolved "https://registry.yarnpkg.com/react-scroll-component/-/react-scroll-component-0.6.7.tgz#875b5ecb20f1e4c62ccedee054e54917bc42e9a4"
+  integrity sha512-sB/SqbfHrXzGcTj0h7WzSIht+pzCnUSvr1SxQo80TFOSyjeYwqXFAP3fhI7Q7+t2ufhKqWU5OUQ3HZr2fJfXAA==
+
+react@17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 react@^18.0.0:
   version "18.0.0"
