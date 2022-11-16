@@ -12,6 +12,7 @@ import Parent from './Parent/Parent';
 import Refs from './Refs/Refs';
 import RenderChildFromConstant from './RenderChildFromConstant/RenderChildFromConstant';
 import RenderChildren from './RenderChildren/RenderChildren';
+import RounikPlayground from './RounikPlayground/RounikPlayground';
 import ScrollComponent from './ScrollComponent/ScrollComponent';
 import ThisInClassCmp from './ThisInClassCmp/ThisInClassCmp';
 import Todo from './Todo/Todo';
@@ -24,63 +25,68 @@ import UseEffectDependency from './UseEffectDependency/UseEffectDependency';
 
 const pages = [
   {
+    Cmp: AsyncSetStateClassCmp,
     name: 'AsyncSetStateClassCmp',
-    route: 'AsyncSetStateClassCmp',
-    Cmp: AsyncSetStateClassCmp
+    route: 'AsyncSetStateClassCmp'
   },
   {
+    Cmp: AwaitSetStateFuncCmp,
     name: 'AwaitSetStateFuncCmp',
-    route: 'AwaitSetStateFuncCmp',
-    Cmp: AwaitSetStateFuncCmp
+    route: 'AwaitSetStateFuncCmp'
   },
-  { name: 'ContextApi', route: 'ContextApi', Cmp: ContextApi },
+  { Cmp: ContextApi, name: 'ContextApi', route: 'ContextApi' },
   {
+    Cmp: DefaultObjectProps,
     name: 'DefaultObjectProps',
-    route: 'DefaultObjectProps',
-    Cmp: DefaultObjectProps
+    route: 'DefaultObjectProps'
   },
-  { name: 'DepArray', route: 'DepArray', Cmp: DepArray },
+  { Cmp: DepArray, name: 'DepArray', route: 'DepArray' },
   {
+    Cmp: EffectsUpdateFlow,
     name: 'EffectsUpdateFlow',
-    route: 'EffectsUpdateFlow',
-    Cmp: EffectsUpdateFlow
+    route: 'EffectsUpdateFlow'
   },
-  { name: 'List', route: 'List', Cmp: List },
+  { Cmp: List, name: 'List', route: 'List' },
   {
+    Cmp: ListOptimization,
     name: 'ListOptimization',
-    route: 'ListOptimization',
-    Cmp: ListOptimization
+    route: 'ListOptimization'
   },
   {
+    Cmp: MemoizationPerformance,
     name: 'MemoizationPerformance',
-    route: 'MemoizationPerformance',
-    Cmp: MemoizationPerformance
+    route: 'MemoizationPerformance'
   },
-  { name: 'Mount', route: 'Mount', Cmp: Mount },
-  { name: 'Parent', route: 'Parent', Cmp: Parent },
-  { name: 'Refs', route: 'Refs', Cmp: Refs },
+  { Cmp: Mount, name: 'Mount', route: 'Mount' },
+  { Cmp: Parent, name: 'Parent', route: 'Parent' },
+  { Cmp: Refs, name: 'Refs', route: 'Refs' },
   {
+    Cmp: RenderChildFromConstant,
     name: 'RenderChildFromConstant',
-    route: 'RenderChildFromConstant',
-    Cmp: RenderChildFromConstant
+    route: 'RenderChildFromConstant'
   },
-  { name: 'RenderChildren', route: 'RenderChildren', Cmp: RenderChildren },
-  { name: 'ScrollComponent', route: 'ScrollComponent', Cmp: ScrollComponent },
-  { name: 'ThisInClassCmp', route: 'ThisInClassCmp', Cmp: ThisInClassCmp },
-  { name: 'Todo', route: 'Todo', Cmp: Todo },
-  { name: 'Unmount', route: 'Unmount', Cmp: Unmount },
-  { name: 'UseAsyncState', route: 'UseAsyncState', Cmp: UseAsyncState },
-  { name: 'UseCallback', route: 'UseCallback', Cmp: UseCallback },
+  { Cmp: RenderChildren, name: 'RenderChildren', route: 'RenderChildren' },
   {
+    Cmp: RounikPlayground,
+    name: 'RounikPlayground',
+    route: 'RounikPlayground'
+  },
+  { Cmp: ScrollComponent, name: 'ScrollComponent', route: 'ScrollComponent' },
+  { Cmp: ThisInClassCmp, name: 'ThisInClassCmp', route: 'ThisInClassCmp' },
+  { Cmp: Todo, name: 'Todo', route: 'Todo' },
+  { Cmp: Unmount, name: 'Unmount', route: 'Unmount' },
+  { Cmp: UseAsyncState, name: 'UseAsyncState', route: 'UseAsyncState' },
+  { Cmp: UseCallback, name: 'UseCallback', route: 'UseCallback' },
+  {
+    Cmp: UseEffectVsUseLayoutEffect,
     name: 'UseEffectVsUseLayoutEffect',
-    route: 'UseEffectVsUseLayoutEffect',
-    Cmp: UseEffectVsUseLayoutEffect
+    route: 'UseEffectVsUseLayoutEffect'
   },
-  { name: 'UsePrevious', route: 'UsePrevious', Cmp: UsePrevious },
+  { Cmp: UsePrevious, name: 'UsePrevious', route: 'UsePrevious' },
   {
+    Cmp: UseEffectDependency,
     name: 'UseEffectDependency',
-    route: 'UseEffectDependency',
-    Cmp: UseEffectDependency
+    route: 'UseEffectDependency'
   }
 ];
 

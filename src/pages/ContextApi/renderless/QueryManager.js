@@ -7,8 +7,8 @@ import { QueryContext } from '../providers';
 const UrlManager = () => {
   const {
     actions: { updateQuery },
-    requestQuery,
-    queries
+    queries,
+    requestQuery
   } = useContext(QueryContext);
 
   const makeQuery = useCallback(async () => {
@@ -16,7 +16,7 @@ const UrlManager = () => {
 
     if (requestQuery && lastRequest) {
       try {
-        updateQuery({ queryId: lastRequest.queryId, data: { loading: true } });
+        updateQuery({ data: { loading: true }, queryId: lastRequest.queryId });
 
         // const result = await axios.get(
         //   'https://jsonplaceholder.typicode.com/posts'
@@ -26,20 +26,20 @@ const UrlManager = () => {
           console.log('POR lastRequest.queryId: ', lastRequest.queryId);
           setTimeout(() => {
             updateQuery({
-              queryId: lastRequest.queryId,
-              data: { loading: false, success: true }
+              data: { loading: false, success: true },
+              queryId: lastRequest.queryId
             });
           }, 3000);
         } else {
           updateQuery({
-            queryId: lastRequest.queryId,
-            data: { loading: false, success: true }
+            data: { loading: false, success: true },
+            queryId: lastRequest.queryId
           });
         }
       } catch (error) {
         updateQuery({
-          queryId: lastRequest.queryId,
-          data: { error: true }
+          data: { error: true },
+          queryId: lastRequest.queryId
         });
       }
     }

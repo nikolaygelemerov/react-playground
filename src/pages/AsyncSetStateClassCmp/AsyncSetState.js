@@ -33,8 +33,8 @@ class AsyncSetState extends PureComponent {
     }));
 
     console({
-      value: `counter Function Call: ${this.state.counter}`,
-      bgColor: 'orange'
+      bgColor: 'orange',
+      value: `counter Function Call: ${this.state.counter}`
     });
 
     await this.setState(prevState => ({
@@ -43,30 +43,30 @@ class AsyncSetState extends PureComponent {
     }));
 
     console({
-      value: `counter1 Function call: ${this.state.counter1}`,
-      bgColor: 'orange'
+      bgColor: 'orange',
+      value: `counter1 Function call: ${this.state.counter1}`
     });
   };
 
   componentDidUpdate(prevProps, prevState) {
     console({
-      value: `counter Did Update: ${this.state.counter}`,
-      bgColor: 'purple'
+      bgColor: 'purple',
+      value: `counter Did Update: ${this.state.counter}`
     });
     console({
-      value: `counter1 Did Update: ${this.state.counter1}`,
-      bgColor: 'purple'
+      bgColor: 'purple',
+      value: `counter1 Did Update: ${this.state.counter1}`
     });
   }
 
   render() {
     console({
-      value: `counter Render: ${this.state.counter}`,
-      bgColor: 'green'
+      bgColor: 'green',
+      value: `counter Render: ${this.state.counter}`
     });
     console({
-      value: `counter1 Render: ${this.state.counter1}`,
-      bgColor: 'green'
+      bgColor: 'green',
+      value: `counter1 Render: ${this.state.counter1}`
     });
 
     return (

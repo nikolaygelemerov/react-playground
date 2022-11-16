@@ -89,13 +89,15 @@ export class Scroll extends PureComponent {
     },
     scrollerTranslate: 0,
     wrapperStyles: {
-      position: 'relative',
       // eslint-disable-next-line react/destructuring-assignment
       display: this.props.display || 'inline-block',
+
+      overflow: 'hidden',
       [this.config.wrapper.overflowDimension]: 'auto',
+
+      position: 'relative',
       // eslint-disable-next-line react/destructuring-assignment
-      width: this.props.direction === 'horizontal' ? this.props.width : 'auto',
-      overflow: 'hidden'
+      width: this.props.direction === 'horizontal' ? this.props.width : 'auto'
     }
   };
 
@@ -261,9 +263,9 @@ export class Scroll extends PureComponent {
           return {
             scrollerStyles: {
               ...prevState.scrollerStyles,
+              MsTransform: transform,
               transform,
-              WebkitTransform: transform,
-              MsTransform: transform
+              WebkitTransform: transform
             },
             scrollerTranslate: translate
           };
@@ -299,9 +301,9 @@ export class Scroll extends PureComponent {
           return {
             scrollerStyles: {
               ...prevState.scrollerStyles,
+              MsTransform: transform,
               transform,
-              WebkitTransform: transform,
-              MsTransform: transform
+              WebkitTransform: transform
             },
             scrollerTranslate: translate
           };
@@ -386,7 +388,7 @@ export class Scroll extends PureComponent {
 
     let direction = null;
 
-    const { top: scrollerTop, bottom: scrollerBottom } =
+    const { bottom: scrollerBottom, top: scrollerTop } =
       this.scroller.current.getBoundingClientRect();
 
     const clickIsAboveScroller = event.clientY < scrollerTop;
@@ -421,10 +423,12 @@ export class Scroll extends PureComponent {
         prevState => ({
           containerStyles: {
             ...prevState.containerStyles,
+
             // eslint-disable-next-line react/destructuring-assignment
-            [scrollDimension]: this.props[scrollDimension],
+            [maxScrollDimension]: this.props[maxScrollDimension] || 'none',
+
             // eslint-disable-next-line react/destructuring-assignment
-            [maxScrollDimension]: this.props[maxScrollDimension] || 'none'
+            [scrollDimension]: this.props[scrollDimension]
           }
         }),
         this.scrollerResizeAndTranslate
@@ -455,8 +459,8 @@ export class Scroll extends PureComponent {
             ref={this.track}
             className={trackClass}
             style={{
-              position: 'absolute',
-              height: '100%'
+              height: '100%',
+              position: 'absolute'
             }}
             onClick={this.trackClickHandler}
             onWheel={this.propagateWheelAsScrollOnContainer}

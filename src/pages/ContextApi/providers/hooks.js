@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-export const useContextValue = ({ state, actions, filters }) => {
+export const useContextValue = ({ actions, filters, state }) => {
   const [value, setValue] = useState(state);
 
   const newActions = useMemo(() => {
@@ -13,10 +13,10 @@ export const useContextValue = ({ state, actions, filters }) => {
     }, {});
   }, [actions, filters]);
 
-  const newValue = useMemo(() => ({ ...value, actions: newActions }), [
-    newActions,
-    value
-  ]);
+  const newValue = useMemo(
+    () => ({ ...value, actions: newActions }),
+    [newActions, value]
+  );
 
   return { value: newValue };
 };

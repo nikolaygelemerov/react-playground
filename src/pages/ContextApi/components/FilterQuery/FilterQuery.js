@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { useQueryFilters } from '../../custom-hooks';
 
 const FilterQuery = () => {
-  const { setQuery, setFilter } = useQueryFilters();
+  const { setFilter, setQuery } = useQueryFilters();
 
   return (
     <>

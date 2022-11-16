@@ -13,10 +13,10 @@ export const useQueryFilters = () => {
   } = useContext(QueryContext);
 
   return {
+    setFilter,
     setQuery: useCallback(() => {
-      setQuery({ queryBy: 'filters', filters });
-    }, [filters, setQuery]),
-    setFilter
+      setQuery({ filters, queryBy: 'filters' });
+    }, [filters, setQuery])
   };
 };
 

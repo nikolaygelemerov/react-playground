@@ -7,11 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { Router } from './hoc';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Router />
-  </React.StrictMode>
-);
+root.render(<Router />);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -38,7 +38,7 @@ class Child_2_ClassCmp extends PureComponent {
   // Create a ref instance property
   ref = createRef();
 
-  logger({ entry, color, bgColor }) {
+  logger({ bgColor, color, entry }) {
     const bgValueComputed = getComputedStyle(
       this.ref?.current
     )?.getPropertyValue('background-color');
@@ -47,11 +47,11 @@ class Child_2_ClassCmp extends PureComponent {
       document.querySelector('#wrapper')?.style?.backgroundColor;
 
     consoleSrv({
+      bgColor: bgValueComputed,
+      color,
       value: `${entry} styles 
       this.ref?.current: ${bgValueComputed}
-      document.querySelector: ${bgValueStyle}`,
-      bgColor: bgValueComputed,
-      color
+      document.querySelector: ${bgValueStyle}`
     });
   }
 
@@ -116,9 +116,9 @@ class Child_2_ClassCmp extends PureComponent {
     });
 
     this.logger({
-      entry: 'componentDidMount',
+      bgColor: 'pink',
       color: 'black',
-      bgColor: 'pink'
+      entry: 'componentDidMount'
     });
 
     this.setState({ color: 'green' });
@@ -131,14 +131,14 @@ class Child_2_ClassCmp extends PureComponent {
   // Preserverse old DOM state (before reflow and repaint)
   getSnapshotBeforeUpdate(prevProps, prevState) {
     this.logger({
-      entry: 'getSnapshotBeforeUpdate',
+      bgColor: 'lightblue',
       color: 'black',
-      bgColor: 'lightblue'
+      entry: 'getSnapshotBeforeUpdate'
     });
 
     return {
-      prevColor: prevState.color,
-      color: this.state.color
+      color: this.state.color,
+      prevColor: prevState.color
     };
   }
 
@@ -149,9 +149,9 @@ class Child_2_ClassCmp extends PureComponent {
     blocker();
 
     this.logger({
-      entry: 'componentDidUpdate',
+      bgColor: 'lightgreen',
       color: 'black',
-      bgColor: 'lightgreen'
+      entry: 'componentDidUpdate'
     });
 
     if (prevState.color !== this.state.color) {
@@ -168,8 +168,8 @@ class Child_2_ClassCmp extends PureComponent {
         ref={this.ref}
         style={{
           backgroundColor: this.state.color,
-          width: '100%',
-          height: 100
+          height: 100,
+          width: '100%'
         }}
       >
         <button onClick={this.toggleColor}>Toggle Collor</button>

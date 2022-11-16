@@ -32,9 +32,9 @@ const Child_1 = () => {
     <div
       style={{
         backgroundColor: color,
-        width: '100%',
         height: 100,
-        marginTop
+        marginTop,
+        width: '100%'
       }}
     >
       Child 1
