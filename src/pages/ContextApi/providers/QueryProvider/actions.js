@@ -1,6 +1,6 @@
 import { idGenerator } from '../../../../services';
 
-export const setQuery = ({ queryBy, filters }, setState) => {
+export const setQuery = ({ filters, queryBy }, setState) => {
   setState(prevState => {
     const queries = [...prevState.queries];
     const queryId = idGenerator();
@@ -8,17 +8,17 @@ export const setQuery = ({ queryBy, filters }, setState) => {
     queries.push({
       error: false,
       loading: false,
-      success: false,
       queryBy,
       queryId,
+      success: false,
       ...(filters ? { filters } : {})
     });
 
-    return { ...prevState, requestQuery: {}, queries };
+    return { ...prevState, queries, requestQuery: {} };
   });
 };
 
-export const updateQuery = ({ queryId, data }, setState) => {
+export const updateQuery = ({ data, queryId }, setState) => {
   setState(prevState => {
     const queries = [...prevState.queries];
 

@@ -99,7 +99,7 @@ const List = props => {
         'https://jsonplaceholder.typicode.com/posts'
       );
 
-      dispatch({ type: 'SET', payload: result.data });
+      dispatch({ payload: result.data, type: 'SET' });
     } catch (error) {
       console.error(error);
     }
@@ -112,7 +112,7 @@ const List = props => {
       );
 
       setTimeout(() => {
-        dispatch({ type: 'ADD', payload: result.data });
+        dispatch({ payload: result.data, type: 'ADD' });
       }, 3000);
     } catch (error) {
       console.error(error);
@@ -120,7 +120,7 @@ const List = props => {
   }, []);
 
   const removeListItemReducer = useCallback(id => {
-    dispatch({ type: 'REMOVE', payload: id });
+    dispatch({ payload: id, type: 'REMOVE' });
   }, []);
 
   /* useReducer End ******************************************************/

@@ -14,7 +14,7 @@ const fetchTodos = async () => {
 const Todo = props => {
   //   const [todoName, setTodoName] = useState('');
   //   const [todoList, setTodoList] = useState([]);
-  const [todoState, setTodoState] = useState({ userInput: '', todoList: [] });
+  const [todoState, setTodoState] = useState({ todoList: [], userInput: '' });
 
   const inputChangeHandler = event => {
     setTodoState({

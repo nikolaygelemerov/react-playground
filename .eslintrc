@@ -1,14 +1,38 @@
 {
-  "extends": "react-app",
-  "plugins": ["react-hooks"],
+  "extends": ["react-app", "plugin:prettier/recommended", "prettier"],
+  "plugins": [
+    "react-hooks",
+    "prettier",
+    "sort-destructure-keys",
+    "sort-keys-fix",
+    "unused-imports"
+  ],
+  "parser": "@babel/eslint-parser",
   "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "quotes": ["error", "single"],
     "react/jsx-pascal-case": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "no-restricted-globals": "warn",
     "no-undef": "error",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "no-use-before-define": "off",
+    "sort-destructure-keys/sort-destructure-keys": [
+      2,
+      { "caseSensitive": false }
+    ],
+    "sort-keys-fix/sort-keys-fix": [
+      "error",
+      "asc",
+      { "caseSensitive": false, "natural": false }
+    ],
+    "unused-imports/no-unused-imports": "error"
   },
   "overrides": [
     {

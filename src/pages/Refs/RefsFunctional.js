@@ -7,7 +7,7 @@ const Refs = () => {
   const forwardCmpRef = React.createRef(null); // same as useRef(null)
   const funcCmpRef = useRef(null);
 
-  const funcCmpRefHandler = (el) => (funcCmpRef.current = el);
+  const funcCmpRefHandler = el => (funcCmpRef.current = el);
 
   useLayoutEffect(() => {
     if (classCmpRef && classCmpRef.current) {

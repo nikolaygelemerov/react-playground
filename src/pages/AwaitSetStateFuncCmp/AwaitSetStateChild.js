@@ -10,18 +10,18 @@ const AwaitSetState = ({ prop }) => {
 
   const updateCountOne = useCallback(async () => {
     console({
-      value: `Func count ONE, a, prop, before: ${countOne}, ${a}, ${prop.a}`,
+      bgColor: 'lightBlue',
       color: 'black',
-      bgColor: 'lightBlue'
+      value: `Func count ONE, a, prop, before: ${countOne}, ${a}, ${prop.a}`
     });
 
     // await setState (none documented behaviour).
     await setCountOne(prevCount => prevCount + 1);
 
     console({
-      value: `Func count ONE after: ${countOne}`,
+      bgColor: 'blue',
       color: 'white',
-      bgColor: 'blue'
+      value: `Func count ONE after: ${countOne}`
     });
 
     // setCountTwo(prevCount => prevCount + 1);
@@ -42,47 +42,47 @@ const AwaitSetState = ({ prop }) => {
 
   useUpdate(async () => {
     console({
-      value: `USE_UPDATE 1 count ONE, count TWO, before: ${countOne}, ${countTwo}`,
+      bgColor: 'lightgreen',
       color: 'black',
-      bgColor: 'lightgreen'
+      value: `USE_UPDATE 1 count ONE, count TWO, before: ${countOne}, ${countTwo}`
     });
 
     await setCountTwo(prevCount => prevCount + 1);
 
     console({
-      value: `USE_UPDATE 1 count ONE, count TWO after: ${countOne}, ${countTwo}, ${a}`,
+      bgColor: 'green',
       color: 'white',
-      bgColor: 'green'
+      value: `USE_UPDATE 1 count ONE, count TWO after: ${countOne}, ${countTwo}, ${a}`
     });
   }, [countOne]);
 
   useUpdate(() => {
     console({
-      value: `USE_UPDATE 2 count ONE: ${countOne}`,
+      bgColor: 'yellow',
       color: 'black',
-      bgColor: 'yellow'
+      value: `USE_UPDATE 2 count ONE: ${countOne}`
     });
   }, [countOne]);
 
   useUpdate(() => {
     a = a + 1;
     console({
-      value: `USE_UPDATE 1 count TWO: ${countTwo}`,
+      bgColor: 'lightgrey',
       color: 'black',
-      bgColor: 'lightgrey'
+      value: `USE_UPDATE 1 count TWO: ${countTwo}`
     });
   }, [countTwo]);
 
   console({
-    value: `RENDER count ONE: ${countOne}`,
+    bgColor: 'orange',
     color: 'black',
-    bgColor: 'orange'
+    value: `RENDER count ONE: ${countOne}`
   });
 
   console({
-    value: `RENDER count TWO: ${countTwo}`,
+    bgColor: 'orange',
     color: 'black',
-    bgColor: 'orange'
+    value: `RENDER count TWO: ${countTwo}`
   });
 
   return (

@@ -3,7 +3,7 @@ import { createContext } from 'react';
 import * as actions from './actions';
 import { useContextValue } from '../hooks';
 
-export const initialState = {
+const initialState = {
   actions: {},
   filters: {}
 };
@@ -11,7 +11,7 @@ export const initialState = {
 export const FiltersContext = createContext(initialState);
 
 export const FiltersProvider = ({ children }) => {
-  const { value } = useContextValue({ state: initialState, actions });
+  const { value } = useContextValue({ actions, state: initialState });
 
   return (
     <FiltersContext.Provider value={value}>{children}</FiltersContext.Provider>

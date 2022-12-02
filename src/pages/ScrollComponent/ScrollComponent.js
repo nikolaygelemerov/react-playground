@@ -5,8 +5,8 @@ import loremIpsum from './lorem-ipsum';
 
 const SCROLL_CONFIG_VERTICAL = {
   direction: 'vertical',
-  height: '400px',
   display: 'block',
+  height: '400px',
   resizeDebounce: 300,
   scrollerClass: 'Scroller',
   track: true,

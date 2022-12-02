@@ -10,19 +10,19 @@ const EffectsUpdateFlow = () => {
     await setCounter1(prevState => prevState + 10);
 
     console({
-      value: `1st USE_UPDATE_ONLY Counter1: ${counter1}`,
-      bgColor: 'red'
+      bgColor: 'red',
+      value: `1st USE_UPDATE_ONLY Counter1: ${counter1}`
     });
   }, [counter2]);
 
   useUpdateOnly(() => {
     console({
-      value: `2nd USE_UPDATE_ONLY Counter1: ${counter1}`,
-      bgColor: 'lightgreen'
+      bgColor: 'lightgreen',
+      value: `2nd USE_UPDATE_ONLY Counter1: ${counter1}`
     });
   }, [counter1]);
 
-  console({ value: `RENDER Counter1: ${counter1}`, bgColor: 'orange' });
+  console({ bgColor: 'orange', value: `RENDER Counter1: ${counter1}` });
 
   return (
     <>
