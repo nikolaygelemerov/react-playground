@@ -51,6 +51,18 @@ const UseEffectVsUseLayoutEffect = props => {
       <button
         onClick={() => {
           setDisplayTest(prevState => !prevState);
+
+          queueMicrotask(() => {
+            console.log('queueMicrotask');
+          });
+
+          setTimeout(() => {
+            console.log('setTimeout');
+          });
+
+          requestAnimationFrame(() => {
+            console.log('requestAnimationFrame');
+          });
         }}
       >
         Toggle Display Test

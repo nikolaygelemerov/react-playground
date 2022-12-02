@@ -1,4 +1,11 @@
-import React, { memo, useCallback, useState } from 'react';
+import {
+  memo,
+  useCallback,
+  useState,
+  useEffect,
+  useLayoutEffect,
+  useRef
+} from 'react';
 
 // This is a workaround of useEffect(() => {}, [count])
 // const useAsyncState = initialValue => {
@@ -16,46 +23,74 @@ import React, { memo, useCallback, useState } from 'react';
 //   console.log('foo');
 // };
 
+const blocker = () => {
+  const now = Date.now();
+
+  while (Date.now() < now + 2000) {}
+};
+
 const UseAsyncState = props => {
   const [count, setCount] = useState(0);
   const [count_1, setCount_1] = useState(0);
+  const colorRef = useRef('red');
 
-  const onClickHandler = useCallback(async () => {
-    new Promise(resolve => {
-      setTimeout(async () => {
-        setCount(prevState => {
-          console.log('prevState 1: ', prevState);
+  const onClickHandler = useCallback(() => {
+    setTimeout(() => {
+      console.log(
+        'TIMEOUT count: ',
+        document.querySelector('#count').textContent
+      );
+    });
 
-          return prevState + 1;
-        });
+    requestAnimationFrame(() => {
+      console.log('RAF count: ', document.querySelector('#count').textContent);
+    });
 
-        setCount(prevState => {
-          console.log('prevState 2: ', prevState);
+    setCount(prevState => {
+      console.log('prevState count 1: ', prevState);
 
-          return prevState;
-        });
-        setCount_1(prevState => prevState + 1);
-      }, 1000);
+      return prevState + 1;
+    });
+
+    console.log('BETWEEN');
+
+    setCount(prevState => {
+      console.log('prevState count 2: ', prevState);
+
+      colorRef.current = 'green';
+
+      return prevState;
+    });
+
+    queueMicrotask(() => {
+      console.log(
+        'MICROTASK count: ',
+        document.querySelector('#count').textContent
+      );
     });
   }, []);
 
-  // const updateCb = useCallback(async () => {
-  //   console.log('UPDATE before count_1: ', count_1);
+  useEffect(() => {
+    console.log('EFFECT count: ', document.querySelector('#count').textContent);
+  }, [count]);
 
-  //   await setCount_1(prevState => prevState + 1);
+  useLayoutEffect(() => {
+    blocker();
 
-  //   console.log('UPDATE after count_1: ', count_1);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [count]);
+    console.log(
+      'LAYOUT EFFECT count: ',
+      document.querySelector('#count').textContent
+    );
+  }, [count]);
 
-  // useEffect(updateCb, [updateCb]);
-
-  console.log('render count, count_1: ', count, count_1);
+  console.log('RENDER count: ', count);
 
   return (
     <div>
       <button onClick={onClickHandler}>Click me</button>
-      <div>Count is {count}</div>
+      <div id="count" style={{ color: colorRef.current }}>
+        Count is {count}
+      </div>
     </div>
   );
 };
