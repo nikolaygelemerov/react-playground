@@ -1,6 +1,7 @@
 import AsyncSetStateClassCmp from './AsyncSetStateClassCmp/AsyncSetState';
 import AwaitSetStateFuncCmp from './AwaitSetStateFuncCmp/AwaitSetState';
 import ContextApi from './ContextApi/ContextApi';
+import CustomHooks from './CustomHooks/CustomHooks';
 import DefaultObjectProps from './DefaultObjectProps/DefaultObjectProps';
 import DepArray from './DepArray/DepArray';
 import EffectsUpdateFlow from './EffectsUpdateFlow/EffectsUpdateFlow';
@@ -34,6 +35,7 @@ const pages = [
     Cmp: AwaitSetStateFuncCmp
   },
   { name: 'ContextApi', route: 'ContextApi', Cmp: ContextApi },
+  { name: 'CustomHooks', route: 'CustomHooks', Cmp: CustomHooks },
   {
     name: 'DefaultObjectProps',
     route: 'DefaultObjectProps',
