@@ -10,6 +10,7 @@ import ListOptimization from './ListOptimization/ListOptimization';
 import MemoizationPerformance from './MemoizationPerformance/MemoizationPerformance';
 import Mount from './Mount/Mount';
 import Parent from './Parent/Parent';
+import PrevState from './PrevState/PrevState';
 import Refs from './Refs/Refs';
 import RenderChildFromConstant from './RenderChildFromConstant/RenderChildFromConstant';
 import RenderChildren from './RenderChildren/RenderChildren';
@@ -61,6 +62,7 @@ const pages = [
   },
   { Cmp: Mount, name: 'Mount', route: 'Mount' },
   { Cmp: Parent, name: 'Parent', route: 'Parent' },
+  { Cmp: PrevState, name: 'PrevState', route: 'PrevState' },
   { Cmp: Refs, name: 'Refs', route: 'Refs' },
   {
     Cmp: RenderChildFromConstant,
