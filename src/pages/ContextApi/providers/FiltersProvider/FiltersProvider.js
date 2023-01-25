@@ -3,7 +3,7 @@ import { createContext } from 'react';
 import * as actions from './actions';
 import { useContextValue } from '../hooks';
 
-export const initialState = {
+const initialState = {
   actions: {},
   filters: {}
 };

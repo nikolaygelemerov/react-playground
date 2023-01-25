@@ -48,22 +48,12 @@ class AsyncSetState extends PureComponent {
     });
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    console({
-      value: `counter Did Update: ${this.state.counter}`,
-      bgColor: 'purple'
-    });
-    console({
-      value: `counter1 Did Update: ${this.state.counter1}`,
-      bgColor: 'purple'
-    });
-  }
-
   render() {
     console({
       value: `counter Render: ${this.state.counter}`,
       bgColor: 'green'
     });
+
     console({
       value: `counter1 Render: ${this.state.counter1}`,
       bgColor: 'green'
@@ -78,6 +68,18 @@ class AsyncSetState extends PureComponent {
         <p>{this.state.counter1}</p>
       </div>
     );
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console({
+      value: `counter Did Update: ${this.state.counter}`,
+      bgColor: 'purple'
+    });
+
+    console({
+      value: `counter1 Did Update: ${this.state.counter1}`,
+      bgColor: 'purple'
+    });
   }
 }
 

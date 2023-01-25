@@ -3,7 +3,7 @@ import {
   BrowserRouter,
   // Redirect,
   Route,
-  Switch,
+  Routes,
   NavLink
 } from 'react-router-dom';
 
@@ -20,6 +20,7 @@ import {
   ListOptimization,
   MemoizationPerformance,
   Mount,
+  NotFound,
   Parent,
   Refs,
   RenderChildFromConstant,
@@ -40,248 +41,235 @@ const Router = () => {
     <BrowserRouter>
       <ul className="Navigation">
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/AsyncSetStateClassCmp"
         >
           AsyncSetStateClassCmp
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/AwaitSetStateFuncCmp"
         >
           AwaitSetStateFuncCmp
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/ContextApi"
         >
           ContextApi
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/DefaultObjectProps"
         >
           DefaultObjectProps
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/DepArray"
         >
           DepArray
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/EffectsUpdateFlow"
         >
           EffectsUpdateFlow
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/List"
         >
           List
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/ListOptimization"
         >
           ListOptimization
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/MemoizationPerformance"
         >
           MemoizationPerformance
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/Mount"
         >
           Mount
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/Parent"
         >
           Parent
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/Refs"
         >
           Refs
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/RenderChildFromConstant"
         >
           RenderChildFromConstant
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/RenderChildren"
         >
           RenderChildren
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/ScrollComponent"
         >
           ScrollComponent
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/ThisInClassCmp"
         >
           ThisInClassCmp
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/Todo"
         >
           Todo
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/Unmount"
         >
           Unmount
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/UseAsyncState"
         >
           UseAsyncState
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/UseCallback"
         >
           UseCallback
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/UseEffectVsUseLayoutEffect"
         >
           UseEffectVsUseLayoutEffect
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/UsePrevious"
         >
           UsePrevious
         </NavLink>
         <NavLink
-          className="NavLink"
-          activeClassName="NavLinkActive"
-          exact
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
           to="/UseEffectDependency"
         >
           UseEffectDependency
         </NavLink>
       </ul>
       <App>
-        <Switch>
+        <Routes>
           <Route
             path="/AsyncSetStateClassCmp"
-            exact
-            component={AsyncSetStateClassCmp}
+            element={<AsyncSetStateClassCmp />}
           />
           <Route
             path="/AwaitSetStateFuncCmp"
-            exact
-            component={AwaitSetStateFuncCmp}
+            element={<AwaitSetStateFuncCmp />}
           />
-          <Route path="/ContextApi" exact component={ContextApi} />
-          <Route
-            path="/DefaultObjectProps"
-            exact
-            component={DefaultObjectProps}
-          />
-          <Route path="/DepArray" exact component={DepArray} />
-          <Route
-            path="/EffectsUpdateFlow"
-            exact
-            component={EffectsUpdateFlow}
-          />
-          <Route path="/List" exact component={List} />
-          <Route path="/ListOptimization" exact component={ListOptimization} />
+          <Route path="/ContextApi" element={<ContextApi />} />
+          <Route path="/DefaultObjectProps" element={<DefaultObjectProps />} />
+          <Route path="/DepArray" element={<DepArray />} />
+          <Route path="/EffectsUpdateFlow" element={<EffectsUpdateFlow />} />
+          <Route path="/List" element={<List />} />
+          <Route path="/ListOptimization" element={<ListOptimization />} />
           <Route
             path="/MemoizationPerformance"
-            exact
-            component={MemoizationPerformance}
+            element={<MemoizationPerformance />}
           />
-          <Route path="/Mount" exact component={Mount} />
-          <Route path="/Parent" exact component={Parent} />
-          <Route path="/Refs" exact component={Refs} />
+          <Route path="/Mount" element={<Mount />} />
+          <Route path="/Parent" element={<Parent />} />
+          <Route path="/Refs" element={<Refs />} />
           <Route
             path="/RenderChildFromConstant"
-            exact
-            component={RenderChildFromConstant}
+            element={<RenderChildFromConstant />}
           />
-          <Route path="/RenderChildren" exact component={RenderChildren} />
-          <Route path="/ScrollComponent" exact component={ScrollComponent} />
-          <Route path="/ThisInClassCmp" exact component={ThisInClassCmp} />
-          <Route path="/Todo" exact component={Todo} />
-          <Route path="/Unmount" exact component={Unmount} />
-          <Route path="/UseAsyncState" exact component={UseAsyncState} />
-          <Route path="/UseCallback" exact component={UseCallback} />
+          <Route path="/RenderChildren" element={<RenderChildren />} />
+          <Route path="/ScrollComponent" element={<ScrollComponent />} />
+          <Route path="/ThisInClassCmp" element={<ThisInClassCmp />} />
+          <Route path="/Todo" element={<Todo />} />
+          <Route path="/Unmount" element={<Unmount />} />
+          <Route path="/UseAsyncState" element={<UseAsyncState />} />
+          <Route path="/UseCallback" element={<UseCallback />} />
           <Route
             path="/UseEffectVsUseLayoutEffect"
-            exact
-            component={UseEffectVsUseLayoutEffect}
+            element={<UseEffectVsUseLayoutEffect />}
           />
-          <Route path="/UsePrevious" exact component={UsePrevious} />
+          <Route path="/UsePrevious" element={<UsePrevious />} />
           <Route
             path="/UseEffectDependency"
-            exact
-            component={UseEffectDependency}
+            element={<UseEffectDependency />}
           />
-        </Switch>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </App>
     </BrowserRouter>
   );

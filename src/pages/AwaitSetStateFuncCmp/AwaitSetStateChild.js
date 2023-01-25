@@ -15,7 +15,7 @@ const AwaitSetState = ({ prop }) => {
       bgColor: 'lightBlue'
     });
 
-    // await setState (none documented behaviour).
+    // await setState (none documented behavior).
     await setCountOne(prevCount => prevCount + 1);
 
     console({
