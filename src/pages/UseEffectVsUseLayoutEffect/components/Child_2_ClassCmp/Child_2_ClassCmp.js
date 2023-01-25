@@ -38,7 +38,7 @@ class Child_2_ClassCmp extends PureComponent {
   // Create a ref instance property
   ref = createRef();
 
-  logger({ entry, color, bgColor }) {
+  logger({ entry, value, color, bgColor }) {
     const bgValueComputed = getComputedStyle(
       this.ref?.current
     )?.getPropertyValue('background-color');
@@ -47,10 +47,8 @@ class Child_2_ClassCmp extends PureComponent {
       document.querySelector('#wrapper')?.style?.backgroundColor;
 
     consoleSrv({
-      value: `${entry} styles 
-      this.ref?.current: ${bgValueComputed}
-      document.querySelector: ${bgValueStyle}`,
-      bgColor: bgValueComputed,
+      value: `${entry} ${value}`,
+      bgColor,
       color
     });
   }
@@ -130,11 +128,12 @@ class Child_2_ClassCmp extends PureComponent {
   // Runs syncronously after render
   // Preserverse old DOM state (before reflow and repaint)
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    // this.logger({
-    //   entry: 'getSnapshotBeforeUpdate',
-    //   color: 'black',
-    //   bgColor: 'lightblue'
-    // });
+    this.logger({
+      entry: 'getSnapshotBeforeUpdate',
+      color: 'black',
+      bgColor: 'lightblue',
+      value: `prevState.color: ${prevState.color} this.state.color: ${this.state.color}`
+    });
 
     return {
       prevColor: prevState.color,

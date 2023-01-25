@@ -1,6 +1,6 @@
 import React, { memo, useState, useRef } from 'react';
 
-import { Child_1 } from './components';
+import { Child_1, Child_2_ClassCmp } from './components';
 
 const UseEffectVsUseLayoutEffect = props => {
   const [displaytest, setDisplayTest] = useState(false);
@@ -59,7 +59,7 @@ const UseEffectVsUseLayoutEffect = props => {
       <div>{counter}</div>
       {displaytest ? (
         <>
-          {/* <Child_1 /> */}
+          {/* <Child_2_ClassCmp /> */}
           <Child_1 />
         </>
       ) : null}

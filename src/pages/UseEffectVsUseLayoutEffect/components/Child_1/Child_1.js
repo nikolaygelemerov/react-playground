@@ -1,4 +1,6 @@
-import React, { memo, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useLayoutEffect, useState } from 'react';
+
+import { console as consoleSrv } from '../../../../services';
 
 const blocker = () => {
   const now = Date.now();
@@ -11,20 +13,58 @@ const Child_1 = () => {
   const [color, setColor] = useState('red');
   const [marginTop, setMarginTop] = useState(0);
 
-  useEffect(() => {
-    blocker();
+  const update = useCallback(() => {
+    // blocker();
+
+    requestAnimationFrame(() => {
+      console.time('start');
+      consoleSrv({ value: `RAF ${color}`, bgColor: 'pink', color: 'white' });
+      console.timeEnd('start');
+    });
 
     setColor('orange');
     setMarginTop(50);
-  }, []);
+  }, [color]);
+
+  useEffect(() => {
+    consoleSrv({
+      value: `useEffect ${color}`,
+      bgColor: 'lightblue',
+      color: 'white'
+    });
+
+    return () =>
+      consoleSrv({
+        value: `useEffect return ${color}`,
+        bgColor: 'blue',
+        color: 'white'
+      });
+  }, [color]);
+
+  useLayoutEffect(() => {
+    consoleSrv({
+      value: `useLayoutEffect ${color}`,
+      bgColor: 'lightgreen',
+      color: 'white'
+    });
+
+    update();
+
+    return () =>
+      consoleSrv({
+        value: `useLayoutEffect return ${color}`,
+        bgColor: 'green',
+        color: 'white'
+      });
+  }, [color]);
 
   return (
     <div
       style={{
         backgroundColor: color,
-        width: '100%',
         height: 100,
-        marginTop
+        marginTop,
+        width: '100%'
       }}
     >
       Child 1
