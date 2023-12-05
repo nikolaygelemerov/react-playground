@@ -7,8 +7,11 @@ import React, {
 } from 'react';
 
 import { CallbackMemo, Func, FuncMemo } from './components';
+import { useLocation } from 'react-router-dom';
 
 const Parent = props => {
+  const location = useLocation();
+  console.log('location.state: ', location.state);
   const [match, setMatch] = useState(false);
   const [count, setCount] = useState({ count: { count: 0 } });
 

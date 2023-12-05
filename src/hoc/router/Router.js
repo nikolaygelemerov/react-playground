@@ -13,6 +13,7 @@ import {
   AsyncSetStateClassCmp,
   AwaitSetStateFuncCmp,
   ContextApi,
+  Counter,
   DefaultObjectProps,
   DepArray,
   EffectsUpdateFlow,
@@ -63,6 +64,14 @@ const Router = () => {
           to="/ContextApi"
         >
           ContextApi
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? 'NavLink NavLinkActive' : 'NavLink'
+          }
+          to="/Counter"
+        >
+          Counter
         </NavLink>
         <NavLink
           className={({ isActive }) =>
@@ -236,6 +245,7 @@ const Router = () => {
             element={<AwaitSetStateFuncCmp />}
           />
           <Route path="/ContextApi" element={<ContextApi />} />
+          <Route path="/Counter" element={<Counter />} />
           <Route path="/DefaultObjectProps" element={<DefaultObjectProps />} />
           <Route path="/DepArray" element={<DepArray />} />
           <Route path="/EffectsUpdateFlow" element={<EffectsUpdateFlow />} />
