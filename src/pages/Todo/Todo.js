@@ -51,7 +51,12 @@ const Todo = props => {
       <input
         type="text"
         placeholder="Todo"
-        onChange={inputChangeHandler}
+        onChange={e => {
+          console.log('onChange', e.target.value);
+        }}
+        onInput={e => {
+          console.log('onInput', e.target.value);
+        }}
         value={todoState.userInput}
       />
       <button type="button" onClick={todoAddHandler}>

@@ -14,13 +14,7 @@ const Child_1 = () => {
   const [marginTop, setMarginTop] = useState(0);
 
   const update = useCallback(() => {
-    // blocker();
-
-    requestAnimationFrame(() => {
-      console.time('start');
-      consoleSrv({ value: `RAF ${color}`, bgColor: 'pink', color: 'white' });
-      console.timeEnd('start');
-    });
+    blocker();
 
     setColor('orange');
     setMarginTop(50);
@@ -32,6 +26,8 @@ const Child_1 = () => {
       bgColor: 'lightblue',
       color: 'white'
     });
+
+    update();
 
     return () =>
       consoleSrv({
@@ -57,6 +53,12 @@ const Child_1 = () => {
         color: 'white'
       });
   }, [color]);
+
+  requestAnimationFrame(() => {
+    console.time('start');
+    consoleSrv({ value: `RAF ${color}`, bgColor: 'pink', color: 'white' });
+    console.timeEnd('start');
+  });
 
   return (
     <div

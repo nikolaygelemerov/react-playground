@@ -2,6 +2,12 @@ import React, { useCallback, useEffect, useReducer, useState } from 'react';
 
 import axios from 'axios';
 
+const blocker = () => {
+  const now = Date.now();
+
+  while (Date.now() < now + 2000) {}
+};
+
 const List = props => {
   /* useState  Start ******************************************************/
   const [listState, updateList] = useState([]);
@@ -133,9 +139,29 @@ const List = props => {
     setListReducer();
   }, [setListReducer, setListState]);
 
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = useCallback(() => {
+    setTimeout(() => setToggle(!toggle), 300);
+  }, [toggle]);
+
+  const handleToggle2 = useCallback(() => {
+    setToggle(true);
+  }, []);
+
   return (
     <>
       <div className={'ListState'}>
+        <button
+          type="button"
+          onClick={() => {
+            handleToggle2();
+            handleToggle();
+          }}
+        >
+          Toggle {toggle ? 'true' : 'false'}
+        </button>
+
         <ul>
           {listState.map(todo => (
             <li key={todo.id}>
